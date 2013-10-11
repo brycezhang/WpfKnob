@@ -1,0 +1,22 @@
+﻿<Window x:Class="WpfKnob.Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:mycontrol="clr-namespace:WpfKnob;assembly=WpfKnob"
+        Title="MainWindow" Height="350" Width="525">
+
+    <Grid>
+        <Slider x:Name="Slid" Maximum="100"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <mycontrol:KnobControl Value="{Binding ElementName=Slid,Path=Value}"
+                                   Margin="20"/>
+            
+            <mycontrol:KnobControl Value="{Binding ElementName=Slid,Path=Value}"
+                                   ArcThickness="25"
+                                   ArcBackground="#ddd"
+                                   ArcForeground="#66EE66"
+                                   TextForeground="#66EE66"
+                                   TextFontSize="14"
+                                   ArcSize="80"/>
+        </StackPanel>
+    </Grid>
+</Window>
